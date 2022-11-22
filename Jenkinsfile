@@ -34,7 +34,7 @@ pipeline{
                 }
             }
         }
-         stage('Maven build'){
+        stage('Maven build'){
             
             steps{
                 
@@ -50,7 +50,7 @@ pipeline{
                 
                 script{
                     
-                    withSonarQubeEnv(credentialsId: 'praveen') {
+                    withSonarQubeEnv(credentialsId: 'sonar'){
                         
                         sh 'mvn clean package sonar:sonar'
                     }
@@ -64,9 +64,10 @@ pipeline{
                     
                     script{
                         
-                        waitForQualityGate abortPipeline: false, credentialsId: 'praveen'
+                        waitForQualityGate abortPipeline: false, credentialsId: 'sonar'
                     }
                 }
             }
         }
+        
 }
