@@ -64,7 +64,7 @@ pipeline{
                     
                     script{
                         
-                       waitForQualityGate abortPipeline: false, credentialsId: 'sonar'
+                      waitForQualityGate abortPipeline: false, credentialsId: 'sonar-token'
                     }
                 }
             }
