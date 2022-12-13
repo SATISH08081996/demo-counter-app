@@ -85,17 +85,19 @@ pipeline{
                     }
                 }
             }
-       stage('Build Docker Image'){
+        stage('Build Docker Image'){
 
                 steps{
                     script{
 
-                         sh 'docker build -t 7675019417/demo-counter-app .'
+                         sh 'docker image build -t $JOB_NAME:v1.$BUILD_ID'
+                         sh 'docker image tag $JOB_NAME:v1.$BUILD_ID 7675019417/$JOB_NAME:v1.$BUILD_ID'
+                         sh 'docker image tag $JOB_NAME:v1.$BUILD_ID 7675019417/$JOB_NAME:latest'
 
 
                     }
                 }
-       }
+            }
 
     }
 }    
