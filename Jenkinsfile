@@ -85,16 +85,17 @@ pipeline{
                     }
                 }
             }
-       stage('Docker Build') {
+       stage('Build Docker Image'){
 
-                stpes{
+                steps{
                     script{
-                        sh " docker build -t 7675019417/demo-counter-app ."
+
+                         sh 'docker build -t 7675019417/demo-counter-app .'
 
 
                     }
                 }
-            }
+       }
 
     }
 }    
