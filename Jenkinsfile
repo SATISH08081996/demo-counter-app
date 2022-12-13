@@ -61,7 +61,7 @@ pipeline{
         stage('upload war file to nexus'){
                 steps{
                     script{
-                        def readPomVersion = readMavenPom file: 'pom.xml'
+                        def readPomVersion = readMavenPom file: '-- pom.xml'
                         
                          def nexusRepo = readPomVersion .version.endswith["SNAPSHOT"] ? "Nexusdemo-snapshot" : "Nexusapp-release"
                         
