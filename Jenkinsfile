@@ -89,7 +89,7 @@ pipeline{
 
                 stpes{
                     script{
-                        sh 'docker build -t 7675019417/demo-counter-app .'
+                        sh " docker build -t 7675019417/demo-counter-app ."
 
 
                     }
