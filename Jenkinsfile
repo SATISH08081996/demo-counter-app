@@ -85,7 +85,7 @@ pipeline{
                     }
                 }
             }
-       stage('Docker Image Build'){
+       stage('Docker Build') {
 
                 stpes{
                     script{
